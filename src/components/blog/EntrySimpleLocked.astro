@@ -1,0 +1,69 @@
+---
+import Text from "@/components/fundations/elements/Text.astro";
+const isLocked = Astro.props.post.data.isLocked;
+const { url, title, pubDate, tags } = {
+  url: "/blog/posts/" + Astro.props.post.slug,
+  title: Astro.props.post.data.title,
+  tags: Astro.props.post.data.tags,
+  pubDate: new Date(Astro.props.post.data.pubDate).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "2-digit",
+  }),
+};
+---
+
+<article class="relative w-full pb-4 overflow-hidden group">
+  <a href={url} title={title} class="absolute inset-0 z-30"></a>
+
+  <!-- Locked hover overlay -->
+  {
+    isLocked && (
+      <div class="absolute inset-0 z-20 flex flex-col items-center justify-center px-4 text-center text-white opacity-0 bg-base-900/70 gap-2 group-hover:opacity-100 transition-opacity">
+        <p class="text-xs font-semibold tracking-wide uppercase">
+          Subscribers Only
+        </p>
+        <a
+          href="/subscribe"
+          class="text-xs underline text-white/90 hover:text-white transition"
+        >
+          Get Access
+        </a>
+      </div>
+    )
+  }
+
+  <div class="relative z-20 flex flex-col justify-between h-full">
+    <Text
+      tag="h3"
+      variant="textBase"
+      class="text-base-900 group-hover:underline"
+    >
+      {title}
+    </Text>
+    <div class="flex items-center gap-x-2 text-base-500">
+      <span>
+        {
+          tags.map((tag) => {
+            const formattedTag = tag.replace(/-/g, " ");
+            return (
+              <Text
+                tag="p"
+                variant="textXS"
+                title={tag}
+                aria-label={tag}
+                class="capitalize"
+              >
+                {formattedTag}
+              </Text>
+            );
+          })
+        }
+      </span>
+      <span>·</span>
+      <Text tag="p" variant="textXS">
+        <time datetime={pubDate}>{pubDate}</time>
+      </Text>
+    </div>
+  </div>
+</article>

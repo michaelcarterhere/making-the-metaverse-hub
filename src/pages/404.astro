@@ -1,0 +1,38 @@
+---
+// Fundations
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+import Link from "@/components/fundations/elements/Link.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+---
+
+<BaseLayout>
+  <section>
+    <Wrapper variant="standard" class="pt-12">
+      <div
+        class="p-10 rounded-4xl lg:rounded-[4rem] bg-base-900 lg:pt-80 lg:px-20"
+      >
+        <span class="text-base-400 text-xs font-mono font-light">404</span>
+        <Text
+          tag="h1"
+          variant="textXL"
+          class="font-light font-mono text-white md:w-1/3 mt-8 text-balance"
+        >
+          Well, This Is Awkward
+        </Text>
+        <Text
+          tag="p"
+          variant="textSM"
+          class="text-base-200 pl-8 mt-4 md:w-2/4 font-light text-balance"
+        >
+          The page you're looking for doesn’t exist. Or maybe it ran away.
+          Either way, it’s not here—but you are, and that’s what counts.
+        </Text>
+
+        <Link href="/" size="sm" variant="accent" class="mt-8 w-fit">
+          Go to Homepage
+        </Link>
+      </div>
+    </Wrapper>
+  </section>
+</BaseLayout>

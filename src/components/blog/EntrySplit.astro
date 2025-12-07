@@ -1,0 +1,50 @@
+---
+import { Image } from "astro:assets";
+import Text from "@/components/fundations/elements/Text.astro";
+import Link from "@/components/fundations/elements/Link.astro";
+// Icons
+import ArrowRight from "@/components/fundations/icons/ArrowRight.astro";
+
+const { url, title, pubDate, image } = {
+  url: "/blog/posts/" + Astro.props.post.slug,
+  title: Astro.props.post.data.title,
+  image: Astro.props.post.data.image.url,
+  pubDate: new Date(Astro.props.post.data.pubDate).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "2-digit",
+  }),
+};
+---
+
+<article class=" grid grid-cols-1 lg:grid-cols-3 gap-2">
+  <div class="flex flex-col p-8 bg-base-100 rounded-4xl">
+    <Text
+      tag="p"
+      variant="textXS"
+      class="pl-8 font-mono font-light capitalize text-base-600"
+    >
+      <time datetime={pubDate}>{pubDate}</time>
+    </Text>
+    <Text tag="h3" variant="textXL" class="mt-8 font-light text-base-900">
+      {title}
+    </Text>
+    <Link
+      href={url}
+      title={title}
+      size="xl"
+      variant="default"
+      iconOnly
+      class="mt-8"
+    >
+      <ArrowRight slot="icon" size="lg" />
+    </Link>
+  </div>
+  <Image
+    src={image}
+    width="800"
+    height="800"
+    alt={title}
+    class="object-cover w-full aspect-12/8 lg:col-span-2 rounded-4xl"
+  />
+</article>

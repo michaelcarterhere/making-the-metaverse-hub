@@ -1,0 +1,53 @@
+{
+  "$ref": "#/definitions/customers",
+  "definitions": {
+    "customers": {
+      "type": "object",
+      "properties": {
+        "customer": {
+          "type": "string"
+        },
+        "feedback": {
+          "type": "string"
+        },
+        "about": {
+          "type": "string"
+        },
+        "details": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "logo": {
+          "type": "object",
+          "properties": {
+            "url": {
+              "type": "string"
+            },
+            "alt": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "url",
+            "alt"
+          ],
+          "additionalProperties": false
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "customer",
+        "feedback",
+        "about",
+        "details",
+        "logo"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

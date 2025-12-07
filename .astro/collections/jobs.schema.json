@@ -1,0 +1,150 @@
+{
+  "$ref": "#/definitions/jobs",
+  "definitions": {
+    "jobs": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "pubDate": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "integer",
+              "format": "unix-time"
+            }
+          ]
+        },
+        "jobType": {
+          "type": "string"
+        },
+        "company": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "jobLevel": {
+          "type": "string"
+        },
+        "experience": {
+          "type": "string"
+        },
+        "salaryRange": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "benefits": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "employmentStatus": {
+          "type": "string"
+        },
+        "requirements": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "salaryType": {
+          "type": "string"
+        },
+        "referenceId": {
+          "type": "string"
+        },
+        "contactEmail": {
+          "type": "string"
+        },
+        "responsibilities": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "hiringManager": {
+          "type": "string"
+        },
+        "companyCulture": {
+          "type": "string"
+        },
+        "perks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "skills": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "workEnvironment": {
+          "type": "string"
+        },
+        "applicationDeadline": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "type": "integer",
+              "format": "unix-time"
+            }
+          ]
+        },
+        "mediaLinks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "applicationInstructions": {
+          "type": "string"
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "pubDate",
+        "jobType",
+        "company",
+        "location",
+        "category",
+        "jobLevel",
+        "experience",
+        "salaryRange",
+        "description",
+        "benefits",
+        "employmentStatus",
+        "requirements",
+        "responsibilities"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

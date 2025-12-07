@@ -1,0 +1,19 @@
+---
+// Fundations
+import PodcastLayout from '@/layouts/PodcastLayout.astro';
+// Content
+import { getCollection } from 'astro:content';
+export async function getStaticPaths() {
+  const podcastEntries = await getCollection('podcast');
+  return podcastEntries.map(entry => ({
+    params: { slug: entry.slug }, 
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+<PodcastLayout frontmatter={entry.data}>
+  <Content />
+</PodcastLayout>

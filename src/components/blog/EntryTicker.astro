@@ -1,0 +1,15 @@
+---
+// fundations
+import Link from "@/components/fundations/elements/Link.astro";
+const { post } = Astro.props;
+const url = `/blog/posts/${post.slug}`;
+const fullTitle = post.data.title;
+const shortTitle =
+  fullTitle.length > 60 ? fullTitle.slice(0, 57) + "..." : fullTitle;
+---
+
+<article class="relative px-1 shrink-0 whitespace-nowrap">
+  <Link size="xxs" variant="default" href={url} title={fullTitle}>
+    {shortTitle}
+  </Link>
+</article>

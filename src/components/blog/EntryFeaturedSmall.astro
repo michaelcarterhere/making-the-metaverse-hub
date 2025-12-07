@@ -1,0 +1,101 @@
+---
+import { Image } from "astro:assets";
+import Text from "@/components/fundations/elements/Text.astro";
+import Link from "@/components/fundations/elements/Link.astro";
+// Icons
+import ArrowRight from "@/components/fundations/icons/ArrowRight.astro";
+const { url, title, description, pubDate, image, author, tags } = {
+  url: "/blog/posts/" + Astro.props.post.slug,
+  tags: Astro.props.post.data.tags,
+  title: Astro.props.post.data.title,
+  author: Astro.props.post.data.author,
+  image: Astro.props.post.data.image.url,
+  description: Astro.props.post.data.description,
+  pubDate: new Date(Astro.props.post.data.pubDate).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "2-digit",
+  }),
+};
+const formatAuthorName = (slug) => {
+  return slug
+    .replace(/-/g, " ") // Replace hyphens with spaces
+    .split(" ") // Split the string into words
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1)) // Capitalize the first letter of each word
+    .join(" "); // Join the words back with spaces
+};
+
+const formattedAuthor = formatAuthorName(author);
+---
+
+<article
+  class="relative flex flex-col justify-between w-full overflow-hidden bg-base-100 rounded-4xl"
+>
+  <!-- Text content -->
+  <div class="flex flex-col flex-1 p-8 gap-2 lg:p-10">
+    <div class="flex flex-col justify-between h-full">
+      <div>
+        <div class="flex items-center justify-between pl-8 gap-2">
+          <Text
+            tag="p"
+            variant="textXS"
+            class="font-mono font-light text-base-600"
+          >
+            {formattedAuthor}
+            <span aria-hidden="true">/</span>
+            <time datetime={pubDate}>{pubDate}</time>
+          </Text>
+          <div>
+            {
+              tags.map((tag) => {
+                const formattedTag = tag.replace(/-/g, " ");
+                return (
+                  <Text
+                  aria-label={tag}
+                    tag="p"
+                    variant="textXS"
+                    class="font-mono font-light capitalize text-base-600"
+                  >
+                    {formattedTag}
+                  </Text>
+                );
+              })
+            }
+          </div>
+        </div>
+
+        <Text
+          tag="h3"
+          variant="displaySM"
+          class="mt-8 font-light text-base-900"
+        >
+          {title}
+        </Text>
+        <span class="sr-only">{description}</span>
+      </div>
+
+      <Link
+        href={url}
+        title={title}
+        size="18"
+        variant="default"
+        iconOnly
+        class="mt-8"
+      >
+        <ArrowRight slot="icon" size="xl" />
+      </Link>
+    </div>
+  </div>
+
+  <div class="w-full">
+    <Image
+      src={image}
+      width="800"
+      height="800"
+      alt={title}
+      loading="eager"
+      decoding="async"
+      class="size-full object-cover aspect-[12/6]"
+    />
+  </div>
+</article>

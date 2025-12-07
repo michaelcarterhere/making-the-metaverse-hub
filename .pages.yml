@@ -1,0 +1,227 @@
+# .pages.yml — Pages CMS config (images live in src/images)
+
+media:
+  - name: assets
+    label: Assets
+    input: src/images/assets
+    output: src/images/assets
+    path: ""
+    extensions: [png, jpg, jpeg, webp, svg]
+
+  - name: authors_img
+    label: Author Avatars
+    input: src/images/authors
+    output: src/images/authors
+    path: ""
+    extensions: [png, jpg, jpeg, webp, svg]
+
+  - name: blog_thumbs
+    label: Blog Thumbnails
+    input: src/images/blogThumbnails
+    output: src/images/blogThumbnails
+    path: ""
+    extensions: [png, jpg, jpeg, webp, svg]
+
+  - name: podcast_thumbs
+    label: Podcast Thumbnails
+    input: src/images/podcastThumbnails
+    output: src/images/podcastThumbnails
+    path: ""
+    extensions: [png, jpg, jpeg, webp, svg]
+
+settings:
+  content:
+    merge: true
+
+content:
+  # ---------------------
+  # INFO PAGES
+  # ---------------------
+  - name: infopages
+    label: Info Pages
+    type: collection
+    path: src/content/infopages
+    filename: "{year}{month}{day}-{hour}{minute}{second}.md"
+    view:
+      primary: page
+      fields: [page, pubDate]
+      sort: [page]
+    fields:
+      - { name: page,    label: Page,     type: string, required: true }
+      - { name: pubDate, label: Pub Date, type: date }
+      - { name: body,    label: Body,     type: rich-text }
+
+  # ---------------------
+  # AUTHORS
+  # ---------------------
+  - name: authors
+    label: Authors
+    type: collection
+    path: src/content/authors
+    filename: "{year}{month}{day}-{hour}{minute}{second}.md"
+    view:
+      primary: name
+      fields: [name, role]
+      sort: [name]
+    fields:
+      - { name: name,  label: Name,  type: string, required: true }
+      - { name: role,  label: Role,  type: string }
+      - { name: bio,   label: Bio,   type: text }
+      - name: image
+        label: Image
+        type: object
+        fields:
+          - name: url
+            label: Image
+            type: image
+            options: { media: authors_img }
+          - { name: alt, label: Alt text, type: string }
+      - name: socials
+        label: Socials
+        type: object
+        fields:
+          - { name: twitter,  label: Twitter,  type: string }
+          - { name: website,  label: Website,  type: string }
+          - { name: linkedin, label: LinkedIn, type: string }
+          - { name: email,    label: Email,    type: string }
+      - { name: body, label: Body, type: rich-text }
+
+  # ---------------------
+  # POSTS
+  # ---------------------
+  - name: posts
+    label: Posts
+    type: collection
+    path: src/content/posts
+    filename: "{year}{month}{day}-{hour}{minute}{second}.md"
+    view:
+      primary: title
+      fields: [title, pubDate, author]
+      sort: [pubDate]
+      default:
+        sort: pubDate
+        order: desc
+    fields:
+      - { name: title,       label: Title,       type: string, required: true }
+      - { name: pubDate,     label: Publication Date, type: date }
+      - { name: description, label: Description, type: text }
+      - { name: author,      label: Author (slug/name), type: string }
+      - name: image
+        label: Cover Image
+        type: object
+        fields:
+          - name: url
+            label: Image
+            type: image
+            options: { media: blog_thumbs }
+          - { name: alt, label: Alt text, type: string }
+      - { name: tags,        label: Tags,        type: string, list: true }
+      - { name: isBreaking,  label: Breaking,    type: boolean }
+      - { name: isTopStory,  label: Top Story,   type: boolean }
+      - { name: isFeatured,  label: Featured,    type: boolean }
+      - { name: isBrief,     label: Brief,       type: boolean }
+      - { name: isLocked,    label: Locked,      type: boolean }
+      - { name: body,        label: Body,        type: rich-text }
+
+  # ---------------------
+  # PODCASTS
+  # ---------------------
+  - name: podcast
+    label: Podcasts
+    type: collection
+    path: src/content/podcast
+    filename: "{year}{month}{day}-{hour}{minute}{second}.md"
+    view:
+      primary: title
+      fields: [title, pubDate, author]
+      sort: [pubDate]
+      default:
+        sort: pubDate
+        order: desc
+    fields:
+      - { name: title,          label: Title,          type: string, required: true }
+      - { name: pubDate,        label: Publication Date, type: date }
+      - { name: description,    label: Description,    type: text }
+      - { name: author,         label: Author,         type: string }
+      - name: image
+        label: Episode Image
+        type: object
+        fields:
+          - name: url
+            label: Image
+            type: image
+            options: { media: podcast_thumbs }
+          - { name: alt, label: Alt text, type: string }
+      - { name: episodeNumber,  label: Episode #,      type: number }
+      - { name: duration,       label: Duration,       type: string }
+      - { name: audioSrc,       label: Audio URL,      type: string }
+      - { name: tags,           label: Tags,           type: string, list: true }
+      - { name: isFeatured,     label: Featured,       type: boolean }
+      - { name: isGuest,        label: Guest Episode,  type: boolean }
+      - { name: isSeries,       label: Part of Series, type: boolean }
+      - { name: isLocked,       label: Locked,         type: boolean }
+      - { name: body,           label: Body,           type: rich-text }
+
+  # ---------------------
+  # JOBS
+  # ---------------------
+  - name: jobs
+    label: Jobs
+    type: collection
+    path: src/content/jobs
+    filename: "{year}{month}{day}-{hour}{minute}{second}.md"
+    view:
+      primary: title
+      fields: [title, company, location]
+      sort: [pubDate]
+      default:
+        sort: pubDate
+        order: desc
+    fields:
+      - { name: title,                label: Title,                type: string, required: true }
+      - { name: pubDate,              label: Publication Date,     type: date }
+      - { name: jobType,              label: Job Type,             type: string }
+      - { name: company,              label: Company,              type: string }
+      - { name: location,             label: Location,             type: string }
+      - { name: category,             label: Category,             type: string }
+      - { name: jobLevel,             label: Job Level,            type: string }
+      - { name: experience,           label: Experience,           type: string }
+      - { name: salaryRange,          label: Salary Range,         type: string }
+      - { name: description,          label: Description,          type: text }
+      - { name: benefits,             label: Benefits,             type: string, list: true }
+      - { name: employmentStatus,     label: Employment Status,    type: string }
+      - { name: requirements,         label: Requirements,         type: string, list: true }
+      - { name: salaryType,           label: Salary Type,          type: string }
+      - { name: referenceId,          label: Reference ID,         type: string }
+      - { name: contactEmail,         label: Contact Email,        type: string }
+      - { name: responsibilities,     label: Responsibilities,     type: string, list: true }
+      - { name: hiringManager,        label: Hiring Manager,       type: string }
+      - { name: companyCulture,       label: Company Culture,      type: string }
+      - { name: perks,                label: Perks,                type: string, list: true }
+      - { name: skills,               label: Skills,               type: string, list: true }
+      - { name: workEnvironment,      label: Work Environment,     type: string }
+      - { name: applicationDeadline,  label: Application Deadline, type: date }
+      - { name: mediaLinks,           label: Media Links,          type: string, list: true }
+      - { name: applicationInstructions, label: Application Instructions, type: text }
+      - { name: body,                 label: Body,                 type: rich-text }
+
+  # ---------------------
+  # HELP CENTER
+  # ---------------------
+  - name: helpCenter
+    label: Help Center
+    type: collection
+    path: src/content/helpCenter
+    filename: "{year}{month}{day}-{hour}{minute}{second}.md"
+    view:
+      primary: title
+      fields: [title, pubDate]
+      sort: [pubDate]
+      default:
+        sort: pubDate
+        order: desc
+    fields:
+      - { name: title,       label: Title,       type: string, required: true }
+      - { name: pubDate,     label: Publication Date, type: date }
+      - { name: description, label: Description, type: text }
+      - { name: body,        label: Body,        type: rich-text }

@@ -1,0 +1,177 @@
+---
+const {
+  variant,
+  href,
+  size,
+  onlyIconSize,
+  iconOnly = false, // ← new
+  gap,
+  class: className,
+  ...rest
+} = Astro.props;
+// Default button
+const defaultClass = [
+  "text-white",
+  "bg-base-900",
+  "hover:bg-base-900",
+  "focus:ring-base-900",
+];
+// Accent button
+const accentClass = [
+  "text-white",
+  "bg-accent-500",
+  "hover:bg-accent-600",
+  "focus:ring-accent-500",
+];
+// yellow button
+const pinkClass = [
+  "text-white",
+  "bg-pink-500",
+  "hover:bg-pink-600",
+  "focus:ring-pink-500",
+];
+// otrange button
+const orangeClass = [
+  "text-base-900",
+  "bg-orange-500",
+  "hover:bg-orange-600",
+  "focus:ring-orange-500",
+];
+// Muted button
+const mutedClass = [
+  "text-base-900",
+  "bg-base-100",
+  "hover:bg-base-200",
+  "focus:ring-base-100",
+];
+// Size (only applies if variant is not "link")
+// Size (only applies if variant is not "link")
+const xxs = ["h-7.5", "px-5", "py-2", "text-xs", "rounded-lg"];
+const xs = ["h-9", "px-6", "py-3", "text-xs", "rounded-xl"];
+const sm = ["h-10", "px-6", "py-3", "text-sm", "rounded-xl"];
+const base = ["h-11", "px-8", "py-4", "text-base", "rounded-xl"];
+const md = ["h-12", "px-8", "py-4", "text-md", "rounded-xl"];
+const lg = ["h-13", "px-8", "py-4", "text-lg", "rounded-xl"];
+const xl = ["h-14", "px-8", "py-4", "text-base", "rounded-2xl"];
+const xxl = ["h-15", "px-8", "py-4", "text-lg", "rounded-2xl"];
+const size16 = ["h-16", "px-8", "py-4", "text-xl", "rounded-2xl"];
+const size17 = ["h-17", "px-8", "py-4", "text-xl", "rounded-2xl"];
+const size18 = ["h-18", "px-8", "py-4", "text-xl", "rounded-2xl"];
+const size19 = ["h-19", "px-8", "py-4", "text-xl", "rounded-2xl"];
+const size20 = ["h-20", "px-8", "py-4", "text-xl", "rounded-3xl"];
+const size21 = ["h-21", "px-8", "py-4", "text-xl", "rounded-3xl"];
+const size22 = ["h-22", "px-8", "py-4", "text-xl", "rounded-3xl"];
+const size23 = ["h-23", "px-8", "py-4", "text-xl", "rounded-3xl"];
+const size24 = ["h-24", "px-8", "py-4", "text-xl", "rounded-3xl"];
+
+// Icon size
+const iconXXS = ["size-7.5", "py-2", "text-xs", "rounded-lg"];
+const iconXS = ["size-9", "text-xs", "rounded-xl"];
+const iconSM = ["size-10", "text-sm", "rounded-xl"];
+const iconBase = ["size-11", "text-base", "rounded-xl"];
+const iconMD = ["size-12", "text-md", "rounded-xl"];
+const iconLG = ["size-13", "text-lg", "rounded-xl"];
+const iconXL = ["size-14", "text-base", "rounded-2xl"];
+const iconXXL = ["size-15", "text-lg", "rounded-2xl"];
+const icon16 = ["size-16", "text-xl", "rounded-2xl"];
+const icon17 = ["size-17", "text-xl", "rounded-2xl"];
+const icon18 = ["size-18", "text-xl", "rounded-2xl"];
+const icon19 = ["size-19", "text-xl", "rounded-2xl"];
+const icon20 = ["size-20", "text-xl", "rounded-3xl"];
+const icon21 = ["size-21", "text-xl", "rounded-3xl"];
+const icon22 = ["size-22", "text-xl", "rounded-3xl"];
+const icon23 = ["size-23", "text-xl", "rounded-3xl"];
+const icon24 = ["size-24", "text-xl", "rounded-3xl"];
+// Gap
+const gapXS = ["gap-2"];
+const gapSM = ["gap-4"];
+const gapBase = ["gap-8"];
+const gapMD = ["gap-10"];
+const gapLG = ["gap-12"];
+const additionalClasses = className ? className.split(" ") : [];
+---
+
+<a
+  href={href}
+  class:list={[
+    "flex",
+    "text-center",
+    "font-mono",
+    "justify-center",
+
+    "items-center",
+    "duration-500",
+    "ease-in-out",
+    "transition-all",
+    "focus:ring-2",
+    "ring-offset-2",
+    "ring-offset-base-500",
+    "hover:rounded-full",
+    variant === "default" && defaultClass,
+    variant === "accent" && accentClass,
+    variant === "pink" && pinkClass,
+    variant === "orange" && orangeClass,
+    variant === "muted" && mutedClass,
+    variant === "none" && [],
+
+    // Icon-only sizes
+    iconOnly && size === "xxs" && iconXXS,
+    iconOnly && size === "xs" && iconXS,
+    iconOnly && size === "sm" && iconSM,
+    iconOnly && size === "base" && iconBase,
+    iconOnly && size === "md" && iconMD,
+    iconOnly && size === "lg" && iconLG,
+    iconOnly && size === "xl" && iconXL,
+    iconOnly && size === "xxl" && iconXXL,
+    iconOnly && size === "16" && icon16,
+    iconOnly && size === "17" && icon17,
+    iconOnly && size === "18" && icon18,
+    iconOnly && size === "19" && icon19,
+    iconOnly && size === "20" && icon20,
+    iconOnly && size === "21" && icon21,
+    iconOnly && size === "22" && icon22,
+    iconOnly && size === "23" && icon23,
+    iconOnly && size === "24" && icon24,
+
+    // Regular button sizes
+    !iconOnly && size === "xxs" && xxs,
+    !iconOnly && size === "xs" && xs,
+    !iconOnly && size === "sm" && sm,
+    !iconOnly && size === "base" && base,
+    !iconOnly && size === "md" && md,
+    !iconOnly && size === "lg" && lg,
+    !iconOnly && size === "xl" && xl,
+    !iconOnly && size === "xxl" && xxl,
+    !iconOnly && size === "16" && size16,
+    !iconOnly && size === "17" && size17,
+    !iconOnly && size === "18" && size18,
+    !iconOnly && size === "19" && size19,
+    !iconOnly && size === "20" && size20,
+    !iconOnly && size === "21" && size21,
+    !iconOnly && size === "22" && size22,
+    !iconOnly && size === "23" && size23,
+    !iconOnly && size === "24" && size24,
+
+    // Gap (only for non-icon-only)
+    !iconOnly && gap === "xs" && gapXS,
+    !iconOnly && gap === "sm" && gapSM,
+    !iconOnly && gap === "base" && gapBase,
+    !iconOnly && gap === "md" && gapMD,
+    !iconOnly && gap === "lg" && gapLG,
+
+    ...additionalClasses,
+  ]}
+  {...rest}
+>
+  {
+    iconOnly ? (
+      <slot name="icon" />
+    ) : (
+      <>
+        <slot name="left-icon" />
+        <slot />
+        <slot name="right-icon" />
+      </>
+    )
+  }
+</a>
