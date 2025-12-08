@@ -1,19 +1,20 @@
 ---
-import { Image } from "astro:assets";
 import advertInline from "@/images/assets/advertInline.svg";
+
+const { class: className = "", ...rest } = Astro.props;
 ---
 
-<div class="relative items-end w-full overflow-hidden ">
-  <a
-    href="https://advertInlineingtonthemes.com/"
-    title="link to https://advertInlineingtonthemes.com/"
-    class="absolute inset-0 z-10"></a>
-
-  <Image
-    src={advertInline}
-    alt="#_"
-    width={1000}
-    height={1000}
-    class="object-cover object-bottom w-full h-full aspect-square lg:aspect-auto lg:object-center rounded-4xl invert"
+<div class={`relative ${className}`} {...rest}>
+  <img
+    src={advertInline.src}
+    alt="Advertise on Making the Metaverse"
+    class="w-full h-auto"
+    loading="lazy"
   />
+  <a
+    href="/pricing/advertise"
+    title="Link to advertise page"
+    class="absolute inset-0 z-10"
+  >
+  </a>
 </div>

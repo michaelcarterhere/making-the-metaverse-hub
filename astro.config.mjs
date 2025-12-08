@@ -21,6 +21,6 @@ export default defineConfig({
     skipInline: false,
     drafts: true,
   },
-  site: "https://yoursite.com",
+  site: "https://makingthemetaverse.com",
   integrations: [sitemap(), mdx()],
 });
