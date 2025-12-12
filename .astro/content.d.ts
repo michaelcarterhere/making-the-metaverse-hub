@@ -231,6 +231,14 @@ declare module 'astro:content' {
   rendered?: RenderedContent;
   filePath?: string;
 }>;
+"podcast_template_files": Record<string, {
+  id: string;
+  body?: string;
+  collection: "podcast_template_files";
+  data: any;
+  rendered?: RenderedContent;
+  filePath?: string;
+}>;
 "posts": Record<string, {
   id: string;
   render(): Render[".md"];

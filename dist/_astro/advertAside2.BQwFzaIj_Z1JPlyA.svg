@@ -1,0 +1,123 @@
+<svg
+  width="500"
+  height="900"
+  viewBox="0 0 500 900"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <!-- Background -->
+  <rect width="500" height="900" fill="#111111" rx="40" />
+
+  <!-- Vertical site text on the right edge -->
+  <text
+    transform="rotate(-90)"
+    x="-840"
+    y="480"
+    font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif"
+    font-size="20"
+    font-weight="600"
+    letter-spacing="4"
+    fill="#ffffff"
+  >
+    MAKINGTHEMETAVERSE.COM
+  </text>
+
+  <!-- Main title block -->
+  <g transform="translate(48, 190)">
+    <text
+      x="0"
+      y="0"
+      font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif"
+      font-size="28"
+      font-weight="700"
+      fill="#ffffff"
+    >
+      Advertise on
+    </text>
+    <text
+      x="0"
+      y="48"
+      font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif"
+      font-size="38"
+      font-weight="800"
+      fill="#ffffff"
+    >
+      Making the
+    </text>
+    <text
+      x="0"
+      y="90"
+      font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif"
+      font-size="38"
+      font-weight="800"
+      fill="#ffffff"
+    >
+      Metaverse
+    </text>
+  </g>
+
+  <!-- Short description -->
+  <g transform="translate(48, 500)">
+    <text
+      x="0"
+      y="0"
+      font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif"
+      font-size="16"
+      font-weight="400"
+      fill="#d1d5db"
+    >
+      Partnerships for a podcast
+    </text>
+    <text
+      x="0"
+      y="24"
+      font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif"
+      font-size="16"
+      font-weight="400"
+      fill="#d1d5db"
+    >
+      about AI, virtual worlds, and the future
+    </text>
+    <text
+      x="0"
+      y="48"
+      font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif"
+      font-size="16"
+      font-weight="400"
+      fill="#d1d5db"
+    >
+      of work.
+    </text>
+  </g>
+
+  <!-- Simple geometric mark in the upper-right quadrant -->
+  <g transform="translate(260, 110)" fill="#ffffff">
+    <rect x="0" y="0" width="140" height="40" />
+    <rect x="0" y="40" width="40" height="140" />
+    <rect x="100" y="40" width="40" height="200" />
+  </g>
+
+  <!-- Call-to-action pill at the bottom -->
+  <g transform="translate(48, 720)">
+    <rect
+      x="0"
+      y="-40"
+      width="360"
+      height="80"
+      rx="40"
+      fill="none"
+      stroke="#22c55e"
+      stroke-width="2"
+    />
+    <text
+      x="180"
+      y="0"
+      text-anchor="middle"
+      font-family="Inter, system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif"
+      font-size="18"
+      font-weight="500"
+      fill="#e5e7eb"
+    >
+      Learn about sponsorships
+    </text>
+  </g>
+</svg>

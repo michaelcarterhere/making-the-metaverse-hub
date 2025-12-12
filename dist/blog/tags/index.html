@@ -1,0 +1,371 @@
+<!DOCTYPE html><html lang="en" class="selection:bg-orange-500 selection:text-base-900"> <head><title>Making the Metaverse — Michael Carter</title>
+<meta name="description" content="Conversations about AI, virtual worlds, and the future of work.">
+<link rel="canonical" href="https://makingthemetaverse.com">
+<meta property="og:title" content="Making the Metaverse — Michael Carter">
+<meta property="og:description" content="Conversations about AI, virtual worlds, and the future of work.">
+<meta property="og:url" content="https://makingthemetaverse.com">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://makingthemetaverse.com/og-image.jpg">
+<meta property="og:image:alt" content="Making the Metaverse podcast artwork">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Making the Metaverse">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@yoursite">
+<meta name="twitter:creator" content="@yourhandle"> <!-- Meta Tags --><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Making the Metaverse</title><meta name="description" content="Making the Metaverse by Michael Carter is focused on artificial intelligence, virtual reality, and blockchain technologies."><meta name="keywords" content="keyword1, keyword2, keyword3"><meta name="author" content="Your Name or Company Name"><!-- Theme Color for Mobile Browsers --><meta name="theme-color" content="#ffffff"><!-- For IE --><meta http-equiv="X-UA-Compatible" content="IE=edge"> <!------
+// Geist & Geist Mono from: https://fonts.google.com/
+--- --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&display=swap" rel="stylesheet"> <!-- Favicons --><link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" href="/icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/manifest.webmanifest"><!-- Favicon for IE --><link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"><!-- Favicons for different sizes --><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png"><!-- Apple Touch Icon (for backwards compatibility) --><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"> <!---- Scripts --> <!--- Keen Slider --><link href="https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/keen-slider.min.css" rel="stylesheet"> <!-- Show ticker only on index and /index-2 --><script type="module">
+  const path = window.location.pathname;
+  if (path !== "/" && path !== "/index-2") {
+    document
+      .getElementById("tickerElement")
+      ?.style.setProperty("display", "none");
+  }
+</script> <script type="module">
+    document.addEventListener("DOMContentLoaded", () => {
+      const menuButton = document.getElementById("menubutton");
+      const menu = document.getElementById("menu");
+      const menuIcon = document.getElementById("menuIcon");
+      const tabsList = document.getElementById("tabsList");
+      const tabPanels = document.getElementById("tabPanels");
+      let expanded = false;
+      // Toggle menu
+      menuButton.addEventListener("click", () => {
+        expanded = !expanded;
+        menuButton.setAttribute("aria-expanded", expanded);
+        menu.classList.toggle("expanded");
+        menuIcon.style.opacity = expanded ? "0" : "1";
+      });
+      // Tabs functionality
+      tabsList.addEventListener("click", (e) => {
+        if (e.target.tagName === "BUTTON") {
+          const selectedCategory = e.target.getAttribute("data-category");
+          // Update tab styles
+          tabsList.querySelectorAll("button").forEach((tab) => {
+            tab.classList.toggle("border-accent-500", tab === e.target);
+            tab.classList.toggle("border-transparent", tab !== e.target);
+          });
+          // Show/hide tab panels
+          tabPanels.querySelectorAll("div[data-category]").forEach((panel) => {
+            panel.classList.toggle(
+              "hidden",
+              panel.getAttribute("data-category") !== selectedCategory
+            );
+          });
+        }
+      });
+    });
+  </script><link rel="stylesheet" href="/_astro/_slug_.DCJRyuUW.css"></head> <body class="flex flex-col bg-base-500 min-h-svh"> <section id="navigation" class="overflow-hidden"> <div class="mx-auto max-w-screen 2xl:max-w-[100rem] px-4  flex flex-col pt-4">  <div class="fixed z-50 top-1 pr-4"> <div class="relative"> <div class="absolute inset-0 pointer-events-nono bg-black/20 backdrop-blur-2xl rounded-2xl"></div> <div class="rounded-2xl flex itmes-start lg:items-center gap-1 p-1 relative"> <a href="/" class="flex text-center font-mono justify-center items-center duration-500 ease-in-out transition-all focus:ring-2 ring-offset-2 ring-offset-base-500 hover:rounded-full text-white bg-base-900 hover:bg-base-900 focus:ring-base-900 h-10 px-6 py-3 text-sm rounded-xl">    <span class="sr-only">Home</span>
+Making the Metaverse
+   </a> <button class="flex text-center font-mono justify-center font-medium items-center duration-500 ease-in-out transition-all focus:ring-2 ring-offset-2 ring-offset-base-500 hover:rounded-full text-base-900 bg-orange-500 hover:bg-orange-600 focus:ring-orange-500 size-10 text-sm rounded-xl shrink-0" id="dropdown-toggle"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-plus size-4" slot="icon"> <path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M12 5l0 14"></path> <path d="M5 12l14 0"></path> </svg> </button> <div class="relative"> <button class="flex text-center font-mono justify-center font-medium items-center duration-500 ease-in-out transition-all focus:ring-2 ring-offset-2 ring-offset-base-500 hover:rounded-full text-white bg-base-900 hover:bg-base-900 focus:ring-base-900 size-10 text-sm rounded-xl" type="button" id="searchButton" aria-label="Search posts"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon size-4" slot="icon"> <path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"></path><path d="M21 21l-6 -6"></path> </svg> </button> <div id="searchModal" class="fixed inset-0 hidden overflow-y-auto z-90" role="dialog" aria-modal="true"> <div class="min-h-screen px-4 text-center"> <div class="fixed inset-0 bg-white/50 transition-opacity" id="modalOverlay"></div> <div class="inline-block relative w-full max-w-2xl p-2 mt-40 text-left align-middle bg-base-900 lg:mt-48 rounded-4xl transition-all transform"> <div class="hidden"> <button type="button" id="closeSearch" class="ml-auto cursor-pointer text-base-600 hover:text-base-700" aria-label="Close search"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-wave-x size-4" slot="icon"> <path stroke="none" d="M0 0h24v24H0z" fill="none"></path> <path d="M18 6l-12 12"></path> <path d="M6 6l12 12"></path> </svg> </button> </div> <input type="text" id="searchInput" placeholder="Search posts..." class="block w-full h-20 px-4 py-2 font-mono text-3xl text-white border border-transparent appearance-none bg-base-900 rounded-3xl duration-300 placeholder-base-300 focus:bg-transparent focus:outline-none focus:ring-accent-500 focus:ring-offset-2 focus:ring-2 focus:ring-offset-black"> <div id="searchResults" class="w-full overflow-y-auto max-h-100 scrollbar-hide"></div> </div> </div> </div> </div> <script>(function(){const posts = [{"slug":"10","tags":["business"],"title":"The Future of Renewable Energy: Innovations and Challenges","pubDate":"2025-05-10T00:00:00.000Z","description":"Exploring the latest advancements in renewable energy and the challenges that lie ahead for a sustainable future."},{"slug":"11","tags":["business"],"title":"AI and the Future of Technology: What's Next?","pubDate":"2025-05-11T00:00:00.000Z","description":"A deep dive into the latest AI breakthroughs, emerging tech trends, and the ethical challenges shaping our digital future."},{"slug":"14","tags":["tech"],"title":"The Silent Revolution: How 5G Is Reshaping Connectivity","pubDate":"2025-05-14T00:00:00.000Z","description":"An exploration of how 5G technology is unlocking new opportunities in mobility, industry, and communication — and what it means for the connected future."},{"slug":"17","tags":["tech"],"title":"The Data-Driven Athlete: How Technology Is Changing Sports Forever","pubDate":"2025-05-17T00:00:00.000Z","description":"From biometric wearables to AI-powered scouting, technology is reshaping how athletes train, compete, and recover — ushering in a new era of performance."},{"slug":"12","tags":["business"],"title":"The Future of Digital Health: From Wearables to AI Diagnostics","pubDate":"2025-05-12T00:00:00.000Z","description":"Exploring how emerging technologies are transforming healthcare, from personalized medicine to intelligent diagnostics and real-time health tracking."},{"slug":"1","tags":["economy"],"title":"Global Economic Shifts: What to Expect in 2025","pubDate":"2025-05-01T00:00:00.000Z","description":"An analysis of the major economic trends shaping the world in 2025, from market fluctuations to policy changes and their global impact."},{"slug":"13","tags":["tech"],"title":"Inside the Chip Race: How Semiconductors Power the Modern World","pubDate":"2025-05-13T00:00:00.000Z","description":"A look into how the global demand for microchips is shaping innovation, geopolitics, and the future of nearly every industry."},{"slug":"16","tags":["tech"],"title":"Human-Machine Collaboration: The Next Evolution in Tech","pubDate":"2025-05-16T00:00:00.000Z","description":"Exploring how AI and automation are enhancing — not replacing — human capabilities, and what it means for the future of work and creativity."},{"slug":"15","tags":["tech"],"title":"Blockchain Beyond Bitcoin: The Future of Decentralized Technology","pubDate":"2025-05-15T00:00:00.000Z","description":"A closer look at how blockchain technology is expanding beyond cryptocurrencies, offering potential for secure, transparent applications across various industries."},{"slug":"18","tags":["tech"],"title":"Women's Sports Are Surging — And So Is the Audience","pubDate":"2025-05-18T00:00:00.000Z","description":"With record-breaking attendance, new media deals, and rising stars, women’s sports are entering a new era of visibility and influence."},{"slug":"2","tags":["politics"],"title":"Europe’s Shifting Landscape: Key Political and Economic Trends","pubDate":"2025-05-02T00:00:00.000Z","description":"Exploring the major political and economic changes shaping Europe in 2025, from policy shifts to economic challenges and opportunities."},{"slug":"19","tags":["tech"],"title":"From Stadiums to Streams: How Sports Viewing Is Going Fully Digital","pubDate":"2025-05-19T00:00:00.000Z","description":"The way fans watch sports is changing fast — with streaming, second screens, and real-time interaction redefining the game-day experience."},{"slug":"20","tags":["tech"],"title":"Esports Aren’t the Future — They’re the Present","pubDate":"2025-05-20T00:00:00.000Z","description":"Competitive gaming has exploded into a global phenomenon. With sold-out arenas and multimillion-dollar prize pools, esports is reshaping what sports means in the digital age."},{"slug":"4","tags":["politics"],"title":"The Political Landscape of 2025: Key Issues and Challenges","pubDate":"2025-05-04T00:00:00.000Z","description":"Analyzing the major political developments and challenges shaping global politics in 2025, from elections to policy shifts."},{"slug":"5","tags":["finance"],"title":"The Global Economic Outlook for 2025: Challenges and Opportunities","pubDate":"2025-05-05T00:00:00.000Z","description":"Examining the key economic trends, challenges, and opportunities shaping the global economy in 2025."},{"slug":"3","tags":["health"],"title":"The Future of Business: Key Strategies for 2025","pubDate":"2025-05-03T00:00:00.000Z","description":"Examining the major trends and strategies shaping the business landscape in 2025, from digital transformation to sustainability initiatives."},{"slug":"21","tags":["tech"],"title":"Are Zombies Coming for the Smart City?","pubDate":"2025-06-07T00:00:00.000Z","description":"How do we keep IoT devices powered, continuously, without plugging them in or replacing a battery every 18 months?"},{"slug":"6","tags":["finance"],"title":"Financial Trends in 2025: Navigating an Evolving Market","pubDate":"2025-05-06T00:00:00.000Z","description":"Analyzing the key financial trends, investment strategies, and market developments shaping the global financial landscape in 2025."},{"slug":"7","tags":["finance"],"title":"Finances in 2025: Challenges and Innovations","pubDate":"2025-05-07T00:00:00.000Z","description":"Exploring the latest advancements, challenges, and breakthroughs in global health for 2025."},{"slug":"8","tags":["business"],"title":"Top finance Trends in 2025: Innovations Shaping the Future","pubDate":"2025-05-08T00:00:00.000Z","description":"Exploring the latest advancements and trends in technology for 2025, from AI breakthroughs to cybersecurity developments."},{"slug":"9","tags":["business"],"title":"The Biggest Sports Moments of 2025","pubDate":"2025-05-09T00:00:00.000Z","description":"A look at the most exciting and unforgettable moments in sports for 2025, from record-breaking performances to championship victories."}];
+
+  window.addEventListener("load", () => {
+    const searchButton = document.getElementById("searchButton");
+    const searchModal = document.getElementById("searchModal");
+    const modalOverlay = document.getElementById("modalOverlay");
+    const searchInput = document.getElementById("searchInput");
+    const searchResults = document.getElementById("searchResults");
+    const closeSearch = document.getElementById("closeSearch");
+
+    const fuse = new Fuse(posts, {
+      keys: ["title", "description", "pubDate", "image", "tags"],
+      threshold: 0.3,
+      includeMatches: true,
+    });
+
+    let currentIndex = -1; // Variable to track the currently highlighted result
+
+    // Function to close the search modal
+    function closeSearchModal(e) {
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+      searchModal.classList.add("hidden"); // Hide modal
+      document.body.style.overflow = ""; // Restore scrolling
+
+      // Clear the input and results
+      searchInput.value = ""; // Clear search input field
+      searchResults.innerHTML = ""; // Clear search results
+      searchResults.classList.add("hidden"); // Ensure results remain hidden
+    }
+
+    // Render search results
+    function renderResults(results) {
+      if (!searchInput.value.trim()) {
+        searchResults.innerHTML = "";
+        searchResults.classList.add("hidden");
+        return;
+      }
+
+      if (results.length === 0) {
+        searchResults.innerHTML = `
+        <div>
+          <h3 class="p-8 text-base font-medium text-base-900">
+            There's nothing here,...
+          </h3>
+        </div>
+        `;
+        searchResults.classList.remove("hidden");
+        return;
+      }
+
+      searchResults.innerHTML = results
+        .map((result, index) => {
+          return `
+         <div class="mt-4">
+           <div  class="relative items-center block p-4 mt-4 duration-300 hover:bg-accent-500 rounded-2xl focus:ring-accent-500 focus:bg-base-5 grid grid-cols-3 gap-4" id="result-${index}">
+              <a href="/blog/posts/${result.item.slug}" class="absolute inset-0 z-10"></a>
+                <div class="flex flex-col col-span-2">
+                  <div class="flex items-center gap-1">
+                    <div class="flex items-center gap-1">
+                      ${
+                        result.item.tags
+                          ? result.item.tags
+                              .map(
+                                (cat) =>
+                                  `<span class="text-xs capitalize text-base-200">${cat}</span>`
+                              )
+                              .join(" , ")
+                          : ""
+                      }
+                    </div>
+                    <span>·</span>
+                    <p class="block text-xs text-base-200">
+                      ${new Date(result.item.pubDate).toLocaleDateString(
+                        "en-US",
+                        {
+                          year: "numeric",
+                          month: "long",
+                          day: "2-digit",
+                        }
+                      )}
+                    </p>
+                  </div>
+                  <h3 class="block mt-2 font-mono text-sm text-white text-balance pl-8">
+                    ${result.item.title}
+                  </h3>
+                 
+                </div>
+           </div>
+         </div>
+        `;
+        })
+        .join("");
+
+      searchResults.classList.remove("hidden");
+      currentIndex = -1; // Reset to no highlighted item after results are rendered
+    }
+
+    // Open search modal
+    function openSearch(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      searchModal.classList.remove("hidden");
+      document.body.style.overflow = "hidden";
+      setTimeout(() => searchInput.focus(), 100);
+    }
+
+    // Event listeners
+    searchButton.addEventListener("click", openSearch);
+    closeSearch.addEventListener("click", closeSearchModal);
+    modalOverlay.addEventListener("click", closeSearchModal);
+
+    // Perform search when input changes
+    searchInput.addEventListener("input", (e) => {
+      const value = e.target.value.trim();
+      const results = value ? fuse.search(value) : [];
+      renderResults(results);
+    });
+
+    // Close search on Escape key
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && !searchModal.classList.contains("hidden")) {
+        closeSearchModal();
+      }
+    });
+
+    // Keyboard navigation with arrow keys
+    document.addEventListener("keydown", (e) => {
+      const resultElements = Array.from(
+        searchResults.getElementsByTagName("a")
+      );
+
+      if (e.key === "ArrowDown") {
+        if (currentIndex < resultElements.length - 1) {
+          currentIndex++;
+        }
+      } else if (e.key === "ArrowUp") {
+        if (currentIndex > 0) {
+          currentIndex--;
+        }
+      }
+
+      if (currentIndex >= 0 && currentIndex < resultElements.length) {
+        resultElements[currentIndex].focus(); // Focus on the current item
+        resultElements[currentIndex].scrollIntoView({
+          behavior: "smooth",
+          block: "nearest",
+        });
+      }
+    });
+  });
+})();</script> <div id="dropdown-panel" class="hidden w-full duration-300 ease-in-out"> <div class="flex flex-wrap gap-1"> <a href="https://buy.polar.sh/polar_cl_Ud7LKuiTum4KOh18ACTaikj9T-YIeLBfyVqFQZ66Rt0" class="flex text-center font-mono justify-center items-center duration-500 ease-in-out transition-all focus:ring-2 ring-offset-2 ring-offset-base-500 hover:rounded-full text-white bg-pink-500 hover:bg-pink-600 focus:ring-pink-500 h-10 px-6 py-3 text-sm rounded-xl">   
+Buy Snowpeak
+   </a> <a href="/system/overview" class="flex text-center font-mono justify-center items-center duration-500 ease-in-out transition-all focus:ring-2 ring-offset-2 ring-offset-base-500 hover:rounded-full text-base-900 bg-base-100 hover:bg-base-200 focus:ring-base-100 h-10 px-6 py-3 text-sm rounded-xl">   
+Overview
+   </a> <a href="/index-2" class="flex text-center font-mono justify-center items-center duration-500 ease-in-out transition-all focus:ring-2 ring-offset-2 ring-offset-base-500 hover:rounded-full text-base-900 bg-base-100 hover:bg-base-200 focus:ring-base-100 h-10 px-6 py-3 text-sm rounded-xl">    Blog    </a> <a href="/podcast/home" class="flex text-center font-mono justify-center items-center duration-500 ease-in-out transition-all focus:ring-2 ring-offset-2 ring-offset-base-500 hover:rounded-full text-base-900 bg-base-100 hover:bg-base-200 focus:ring-base-100 h-10 px-6 py-3 text-sm rounded-xl">   
+Podcast
+   </a> <a href="/blog/tags/tech" class="flex text-center font-mono justify-center items-center duration-500 ease-in-out transition-all focus:ring-2 ring-offset-2 ring-offset-base-500 hover:rounded-full text-base-900 bg-base-100 hover:bg-base-200 focus:ring-base-100 h-10 px-6 py-3 text-sm rounded-xl font-medium capitalize">   tech   </a><a href="/blog/tags/business" class="flex text-center font-mono justify-center items-center duration-500 ease-in-out transition-all focus:ring-2 ring-offset-2 ring-offset-base-500 hover:rounded-full text-base-900 bg-base-100 hover:bg-base-200 focus:ring-base-100 h-10 px-6 py-3 text-sm rounded-xl font-medium capitalize">   business   </a><a href="/blog/tags/finance" class="flex text-center font-mono justify-center items-center duration-500 ease-in-out transition-all focus:ring-2 ring-offset-2 ring-offset-base-500 hover:rounded-full text-base-900 bg-base-100 hover:bg-base-200 focus:ring-base-100 h-10 px-6 py-3 text-sm rounded-xl font-medium capitalize">   finance   </a><a href="/blog/tags/politics" class="flex text-center font-mono justify-center items-center duration-500 ease-in-out transition-all focus:ring-2 ring-offset-2 ring-offset-base-500 hover:rounded-full text-base-900 bg-base-100 hover:bg-base-200 focus:ring-base-100 h-10 px-6 py-3 text-sm rounded-xl font-medium capitalize">   politics   </a><a href="/blog/tags/health" class="flex text-center font-mono justify-center items-center duration-500 ease-in-out transition-all focus:ring-2 ring-offset-2 ring-offset-base-500 hover:rounded-full text-base-900 bg-base-100 hover:bg-base-200 focus:ring-base-100 h-10 px-6 py-3 text-sm rounded-xl font-medium capitalize">   health   </a><a href="/blog/tags/economy" class="flex text-center font-mono justify-center items-center duration-500 ease-in-out transition-all focus:ring-2 ring-offset-2 ring-offset-base-500 hover:rounded-full text-base-900 bg-base-100 hover:bg-base-200 focus:ring-base-100 h-10 px-6 py-3 text-sm rounded-xl font-medium capitalize">   economy   </a> <a href="/forms/sign-in" class="flex text-center font-mono justify-center items-center duration-500 ease-in-out transition-all focus:ring-2 ring-offset-2 ring-offset-base-500 hover:rounded-full text-white bg-accent-500 hover:bg-accent-600 focus:ring-accent-500 h-10 px-6 py-3 text-sm rounded-xl">   
+Sign in
+   </a> </div> </div> </div> </div> </div> <div id="bigLogo" class="p-10 mt-12 rounded-4xl lg:rounded-[5rem] bg-base-900 lg:p-40"> <svg id="bigLogo" class="text-white relative" viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="mtmTitle mtmSubtitle"> <title id="mtmTitle">Making the Metaverse</title> <desc id="mtmSubtitle">
+A podcast by Michael Carter about AI, virtual worlds, and the future of work.
+</desc> <!-- Main title, stacked for more impact --> <text x="0" y="120" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif" font-size="96" font-weight="700" letter-spacing="1" fill="currentColor"> <tspan x="0" dy="0">Making the</tspan> <tspan x="0" dy="90">Metaverse</tspan> </text> <!-- Subtitle --> <text x="0" y="260" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif" font-size="28" font-weight="400" fill="currentColor" opacity="0.85">
+A podcast by Michael Carter
+</text> </svg> <script type="module">
+  const path = window.location.pathname;
+  // Only show the big logo on primary landing pages
+  if (
+    path !== "/" &&
+    path !== "/index-2" &&
+    path !== "/podcast/home"
+  ) {
+    document.getElementById("bigLogo")?.style.setProperty("display", "none");
+  }
+</script> </div> <div id="tickerElement"> <div class="relative flex items-center order-last px-2 py-2 overflow-x-scroll snap-x snap-proximity scrollbar-hide animate-marquee w-max pause-on-hover"> <article class="relative px-1 shrink-0 whitespace-nowrap"> <a href="/blog/posts/21" class="flex text-center font-mono justify-center items-center duration-500 ease-in-out transition-all focus:ring-2 ring-offset-2 ring-offset-base-500 hover:rounded-full text-white bg-base-900 hover:bg-base-900 focus:ring-base-900 h-7.5 px-5 py-2 text-xs rounded-lg" title="Are Zombies Coming for the Smart City?">   Are Zombies Coming for the Smart City?   </a> </article><article class="relative px-1 shrink-0 whitespace-nowrap"> <a href="/blog/posts/20" class="flex text-center font-mono justify-center items-center duration-500 ease-in-out transition-all focus:ring-2 ring-offset-2 ring-offset-base-500 hover:rounded-full text-white bg-base-900 hover:bg-base-900 focus:ring-base-900 h-7.5 px-5 py-2 text-xs rounded-lg" title="Esports Aren’t the Future — They’re the Present">   Esports Aren’t the Future — They’re the Present   </a> </article><article class="relative px-1 shrink-0 whitespace-nowrap"> <a href="/blog/posts/19" class="flex text-center font-mono justify-center items-center duration-500 ease-in-out transition-all focus:ring-2 ring-offset-2 ring-offset-base-500 hover:rounded-full text-white bg-base-900 hover:bg-base-900 focus:ring-base-900 h-7.5 px-5 py-2 text-xs rounded-lg" title="From Stadiums to Streams: How Sports Viewing Is Going Fully Digital">   From Stadiums to Streams: How Sports Viewing Is Going Ful...   </a> </article><article class="relative px-1 shrink-0 whitespace-nowrap"> <a href="/blog/posts/18" class="flex text-center font-mono justify-center items-center duration-500 ease-in-out transition-all focus:ring-2 ring-offset-2 ring-offset-base-500 hover:rounded-full text-white bg-base-900 hover:bg-base-900 focus:ring-base-900 h-7.5 px-5 py-2 text-xs rounded-lg" title="Women's Sports Are Surging — And So Is the Audience">   Women&#39;s Sports Are Surging — And So Is the Audience   </a> </article><article class="relative px-1 shrink-0 whitespace-nowrap"> <a href="/blog/posts/17" class="flex text-center font-mono justify-center items-center duration-500 ease-in-out transition-all focus:ring-2 ring-offset-2 ring-offset-base-500 hover:rounded-full text-white bg-base-900 hover:bg-base-900 focus:ring-base-900 h-7.5 px-5 py-2 text-xs rounded-lg" title="The Data-Driven Athlete: How Technology Is Changing Sports Forever">   The Data-Driven Athlete: How Technology Is Changing Sport...   </a> </article><article class="relative px-1 shrink-0 whitespace-nowrap"> <a href="/blog/posts/16" class="flex text-center font-mono justify-center items-center duration-500 ease-in-out transition-all focus:ring-2 ring-offset-2 ring-offset-base-500 hover:rounded-full text-white bg-base-900 hover:bg-base-900 focus:ring-base-900 h-7.5 px-5 py-2 text-xs rounded-lg" title="Human-Machine Collaboration: The Next Evolution in Tech">   Human-Machine Collaboration: The Next Evolution in Tech   </a> </article> </div> </div>  </div> </section> <script type="module">
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.getElementById("dropdown-toggle");
+    const panel = document.getElementById("dropdown-panel");
+
+    toggle.addEventListener("click", () => {
+      panel.classList.toggle("hidden");
+    });
+  });
+</script> <main class="grow"> <section> <div class="mx-auto max-w-screen 2xl:max-w-[100rem] px-4  py-12">  <div class="p-8 bg-base-600 rounded-2xl"> <h2 class="text-lg sm:text-xl md:text-2xl font-mono font-light text-white uppercase">  All tags  </h2> </div> <div class="mt-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2"> <div class="relative flex flex-col overflow-hidden bg-white group rounded-4xl"> <img src="/_astro/10.BaHsCDo7_ZWtgpx.webp" alt="business icon" loading="lazy" decoding="async" fetchpriority="auto" width="800" height="800" class="order-last object-cover w-full aspect-12/6"> <div class="p-8"> <span class="pl-8 font-mono text-base-500"> <span>5</span> Articles in
+</span> <h3 class="text-base sm:text-lg md:text-xl  mt-1 font-light capitalize  gap-4 text-base-900">  business  </h3> <a href="/blog/tags/business" class="flex text-center font-mono justify-center items-center duration-500 ease-in-out transition-all focus:ring-2 ring-offset-2 ring-offset-base-500 hover:rounded-full text-white bg-base-900 hover:bg-base-900 focus:ring-base-900 size-11 text-base rounded-xl mt-10"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon size-5" slot="icon"> <path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M5 12l14 0"></path><path d="M13 18l6 -6"></path><path d="M13 6l6 6"></path> </svg> </a> </div> </div><div class="relative flex flex-col overflow-hidden bg-white group rounded-4xl"> <img src="/_astro/14.DAKTriWP_17OOyn.webp" alt="tech icon" loading="lazy" decoding="async" fetchpriority="auto" width="800" height="800" class="order-last object-cover w-full aspect-12/6"> <div class="p-8"> <span class="pl-8 font-mono text-base-500"> <span>9</span> Articles in
+</span> <h3 class="text-base sm:text-lg md:text-xl  mt-1 font-light capitalize  gap-4 text-base-900">  tech  </h3> <a href="/blog/tags/tech" class="flex text-center font-mono justify-center items-center duration-500 ease-in-out transition-all focus:ring-2 ring-offset-2 ring-offset-base-500 hover:rounded-full text-white bg-base-900 hover:bg-base-900 focus:ring-base-900 size-11 text-base rounded-xl mt-10"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon size-5" slot="icon"> <path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M5 12l14 0"></path><path d="M13 18l6 -6"></path><path d="M13 6l6 6"></path> </svg> </a> </div> </div><div class="relative flex flex-col overflow-hidden bg-white group rounded-4xl"> <img src="/_astro/1.CXwSYtWh_4cf4j.webp" alt="economy icon" loading="lazy" decoding="async" fetchpriority="auto" width="800" height="800" class="order-last object-cover w-full aspect-12/6"> <div class="p-8"> <span class="pl-8 font-mono text-base-500"> <span>1</span> Articles in
+</span> <h3 class="text-base sm:text-lg md:text-xl  mt-1 font-light capitalize  gap-4 text-base-900">  economy  </h3> <a href="/blog/tags/economy" class="flex text-center font-mono justify-center items-center duration-500 ease-in-out transition-all focus:ring-2 ring-offset-2 ring-offset-base-500 hover:rounded-full text-white bg-base-900 hover:bg-base-900 focus:ring-base-900 size-11 text-base rounded-xl mt-10"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon size-5" slot="icon"> <path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M5 12l14 0"></path><path d="M13 18l6 -6"></path><path d="M13 6l6 6"></path> </svg> </a> </div> </div><div class="relative flex flex-col overflow-hidden bg-white group rounded-4xl"> <img src="/_astro/2.CMsqRbH6_B7VMq.webp" alt="politics icon" loading="lazy" decoding="async" fetchpriority="auto" width="800" height="800" class="order-last object-cover w-full aspect-12/6"> <div class="p-8"> <span class="pl-8 font-mono text-base-500"> <span>2</span> Articles in
+</span> <h3 class="text-base sm:text-lg md:text-xl  mt-1 font-light capitalize  gap-4 text-base-900">  politics  </h3> <a href="/blog/tags/politics" class="flex text-center font-mono justify-center items-center duration-500 ease-in-out transition-all focus:ring-2 ring-offset-2 ring-offset-base-500 hover:rounded-full text-white bg-base-900 hover:bg-base-900 focus:ring-base-900 size-11 text-base rounded-xl mt-10"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon size-5" slot="icon"> <path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M5 12l14 0"></path><path d="M13 18l6 -6"></path><path d="M13 6l6 6"></path> </svg> </a> </div> </div><div class="relative flex flex-col overflow-hidden bg-white group rounded-4xl"> <img src="/_astro/5.Qg21ScCo_1flJTS.webp" alt="finance icon" loading="lazy" decoding="async" fetchpriority="auto" width="800" height="800" class="order-last object-cover w-full aspect-12/6"> <div class="p-8"> <span class="pl-8 font-mono text-base-500"> <span>3</span> Articles in
+</span> <h3 class="text-base sm:text-lg md:text-xl  mt-1 font-light capitalize  gap-4 text-base-900">  finance  </h3> <a href="/blog/tags/finance" class="flex text-center font-mono justify-center items-center duration-500 ease-in-out transition-all focus:ring-2 ring-offset-2 ring-offset-base-500 hover:rounded-full text-white bg-base-900 hover:bg-base-900 focus:ring-base-900 size-11 text-base rounded-xl mt-10"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon size-5" slot="icon"> <path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M5 12l14 0"></path><path d="M13 18l6 -6"></path><path d="M13 6l6 6"></path> </svg> </a> </div> </div><div class="relative flex flex-col overflow-hidden bg-white group rounded-4xl"> <img src="/_astro/3.kCyiPzlJ_Z8sUpQ.webp" alt="health icon" loading="lazy" decoding="async" fetchpriority="auto" width="800" height="800" class="order-last object-cover w-full aspect-12/6"> <div class="p-8"> <span class="pl-8 font-mono text-base-500"> <span>1</span> Articles in
+</span> <h3 class="text-base sm:text-lg md:text-xl  mt-1 font-light capitalize  gap-4 text-base-900">  health  </h3> <a href="/blog/tags/health" class="flex text-center font-mono justify-center items-center duration-500 ease-in-out transition-all focus:ring-2 ring-offset-2 ring-offset-base-500 hover:rounded-full text-white bg-base-900 hover:bg-base-900 focus:ring-base-900 size-11 text-base rounded-xl mt-10"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon size-5" slot="icon"> <path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M5 12l14 0"></path><path d="M13 18l6 -6"></path><path d="M13 6l6 6"></path> </svg> </a> </div> </div> </div>  </div> </section> </main> <footer> <div class="mx-auto max-w-screen 2xl:max-w-[100rem] px-4  py-2">  <div class="grid grid-cols-1 lg:grid-cols-6 lg:row-span-2 gap-2"> <div class="items-end p-2 bg-base-900 rounded-4xl lg:col-span-2 lg:row-span-2"> <div class="flex flex-col px-4 pt-4 gap-2"> <h3 class="text-sm  font-mono text-white sm:w-1/3">  
+Subscribe to Making the Metaverse
+  </h3> <p class="text-sm  pl-8 text-white sm:w-1/2">  
+You can unsubscribe at any time. Our Privacy Policy is available
+            here.
+  </p> </div> <form class="flex items-end w-full mt-12 lg:mt-48 gap-2"> <div class="flex flex-col w-full"> <label for="email" class="sr-only"> Email address </label> <input type="email" id="email" required aria-label="Email address" autocomplete="email" class="block w-full h-20 px-4 py-2 font-mono text-3xl text-white border border-transparent appearance-none bg-base-800 rounded-3xl duration-300 placeholder-base-300 focus:bg-transparent focus:outline-none focus:ring-accent-500 focus:ring-offset-2 focus:ring-2 focus:ring-offset-base-500"> </div> <button class="flex text-center font-mono justify-center font-medium items-center duration-500 ease-in-out transition-all focus:ring-2 ring-offset-2 ring-offset-base-500 hover:rounded-full text-white bg-accent-500 hover:bg-accent-600 focus:ring-accent-500 size-20 text-xl rounded-3xl shrink-0"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon size-8" slot="icon"> <path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M5 12l14 0"></path><path d="M13 18l6 -6"></path><path d="M13 6l6 6"></path> </svg> </button> </form> </div> <div class="p-8 bg-base-100 rounded-4xl"> <h3 class="text-sm  font-mono  text-base-900">  Making the Metaverse  </h3> <ul role="list" class="pl-8 "> <li> <a class="text-xs  text-xs text-base-600 hover:text-base-900 capitalize" href="/system/overview">  Overview  </a> </li><li> <a class="text-xs  text-xs text-base-600 hover:text-base-900 capitalize" href="/system/colors">  Colors  </a> </li><li> <a class="text-xs  text-xs text-base-600 hover:text-base-900 capitalize" href="/system/links">  Links  </a> </li><li> <a class="text-xs  text-xs text-base-600 hover:text-base-900 capitalize" href="/system/buttons">  Buttons  </a> </li><li> <a class="text-xs  text-xs text-base-600 hover:text-base-900 capitalize" href="/system/typography">  Typography  </a> </li> </ul> </div><div class="p-8 bg-base-100 rounded-4xl"> <h3 class="text-sm  font-mono  text-base-900">  Categories  </h3> <ul role="list" class="pl-8 "> <li> <a class="text-xs  text-xs text-base-600 hover:text-base-900 capitalize" href="/blog/tags/tech">  tech  </a> </li><li> <a class="text-xs  text-xs text-base-600 hover:text-base-900 capitalize" href="/blog/tags/business">  business  </a> </li><li> <a class="text-xs  text-xs text-base-600 hover:text-base-900 capitalize" href="/blog/tags/finance">  finance  </a> </li><li> <a class="text-xs  text-xs text-base-600 hover:text-base-900 capitalize" href="/blog/tags/politics">  politics  </a> </li><li> <a class="text-xs  text-xs text-base-600 hover:text-base-900 capitalize" href="/blog/tags/health">  health  </a> </li><li> <a class="text-xs  text-xs text-base-600 hover:text-base-900 capitalize" href="/blog/tags/economy">  economy  </a> </li> </ul> </div><div class="p-8 bg-base-100 rounded-4xl"> <h3 class="text-sm  font-mono  text-base-900">  Company  </h3> <ul role="list" class="pl-8 "> <li> <a class="text-xs  text-xs text-base-600 hover:text-base-900 capitalize" href="#_">  Twitter  </a> </li><li> <a class="text-xs  text-xs text-base-600 hover:text-base-900 capitalize" href="#_">  Linkedin  </a> </li><li> <a class="text-xs  text-xs text-base-600 hover:text-base-900 capitalize" href="#_">  Youtube  </a> </li><li> <a class="text-xs  text-xs text-base-600 hover:text-base-900 capitalize" href="#_">  Facebook  </a> </li><li> <a class="text-xs  text-xs text-base-600 hover:text-base-900 capitalize" href="#_">  Instagram  </a> </li> </ul> </div> <div class="p-8 bg-base-900 rounded-4xl lg:col-start-3 flex flex-col items-center justify-center"> <p class="text-lg sm:text-xl md:text-2xl font-mono text-white">   <span class="  "> Making the Metaverse</span>   </p> </div> <div class="p-8 bg-orange-500 rounded-4xl lg:col-start-5 lg:col-span-2 flex flex-col items-center justify-center"> <p class="text-sm  font-mono text-base-900">  
+© Copyright Lexington Themes <span id="year"></span> and beyond.
+  </p> </div> </div>  </div> </footer> <script type="module">
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script> <!-- FuseJS: https://fusejs.io/ --><script type="module" src="/_astro/FuseJS.astro_astro_type_script_index_0_lang.CWUOEIUq.js"></script> <!-- Scripts --> <script type="module">
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll("#tab-section").forEach((tabSection) => {
+      // Select all the tab links inside the current #tab-section
+      const tabs = tabSection.querySelectorAll("button");
+      // Select all the tab content sections within the current #tab-section
+      const tabContents = tabSection.querySelectorAll(".tab-content");
+
+      if (tabs.length > 0 && tabContents.length > 0) {
+        // Set the first tab as active and its content visible by default
+        tabs[0].classList.add("text-base-900", "border-b-2", "border-base-500");
+        tabContents[0].classList.remove("hidden"); // Show the first tab content by default
+      }
+
+      // Add a click event listener to each tab link
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          // Remove the active class from all tabs in this section
+          tabs.forEach((t) =>
+            t.classList.remove("border-b-2", "border-base-500", "text-base-900")
+          );
+          // Add the active class to the clicked tab
+          tab.classList.add("text-base-900", "border-b-2", "border-base-500");
+
+          // Hide all tab contents in this section
+          tabContents.forEach((content) => content.classList.add("hidden"));
+
+          // Show the corresponding content in this section
+          const targetTab = tab.getAttribute("data-tab");
+          tabSection.querySelector(`#${targetTab}`).classList.remove("hidden");
+        });
+      });
+    });
+  });
+</script> <script type="module">
+  document.addEventListener("DOMContentLoaded", () => {
+    const playPauseBtn = document.getElementById("playPauseBtn");
+    const audioElement = document.getElementById("audioElement");
+    const seekBar = document.getElementById("seekBar");
+    const muteBtn = document.getElementById("muteBtn");
+    const backwardBtn = document.getElementById("backwardBtn");
+    const forwardBtn = document.getElementById("forwardBtn");
+    const currentTimeDisplay = document.getElementById("currentTime");
+    const durationDisplay = document.getElementById("duration");
+
+    // Icons inside the buttons
+    const playIcon = document.getElementById("playIcon");
+    const pauseIcon = document.getElementById("pauseIcon");
+    const speakerIcon = document.getElementById("speakerIcon");
+    const muteIcon = document.getElementById("muteIcon");
+
+    // Play/Pause toggle
+    playPauseBtn.addEventListener("click", () => {
+      if (audioElement.paused) {
+        audioElement.play();
+        playIcon.classList.add("hidden");
+        pauseIcon.classList.remove("hidden");
+      } else {
+        audioElement.pause();
+        pauseIcon.classList.add("hidden");
+        playIcon.classList.remove("hidden");
+      }
+    });
+
+    // Mute/Unmute toggle
+    muteBtn.addEventListener("click", () => {
+      audioElement.muted = !audioElement.muted;
+      speakerIcon.classList.toggle("hidden", audioElement.muted);
+      muteIcon.classList.toggle("hidden", !audioElement.muted);
+    });
+
+    // Backward 10s
+    backwardBtn.addEventListener("click", () => {
+      audioElement.currentTime = Math.max(0, audioElement.currentTime - 10);
+    });
+
+    // Forward 10s
+    forwardBtn.addEventListener("click", () => {
+      audioElement.currentTime = Math.min(
+        audioElement.duration,
+        audioElement.currentTime + 10
+      );
+    });
+
+    // Update time and seek bar
+    audioElement.addEventListener("timeupdate", () => {
+      const progress = (audioElement.currentTime / audioElement.duration) * 100;
+      seekBar.value = progress;
+
+      const minutes = Math.floor(audioElement.currentTime / 60);
+      const seconds = Math.floor(audioElement.currentTime % 60);
+      currentTimeDisplay.textContent = `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+    });
+
+    // Update duration
+    audioElement.addEventListener("loadedmetadata", () => {
+      const minutes = Math.floor(audioElement.duration / 60);
+      const seconds = Math.floor(audioElement.duration % 60);
+      durationDisplay.textContent = `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+    });
+
+    // Seek bar interaction
+    seekBar.addEventListener("input", () => {
+      const seekTo = (seekBar.value / 100) * audioElement.duration;
+      audioElement.currentTime = seekTo;
+    });
+  });
+</script> </body></html>

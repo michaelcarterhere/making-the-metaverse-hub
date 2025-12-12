@@ -1,0 +1,15 @@
+<svg width="1600" height="500" viewBox="0 0 1600 500" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="500" fill="#111" />
+  <text x="120" y="180" font-family="Inter, sans-serif" font-size="64" font-weight="700" fill="#fff">
+    Partner with
+  </text>
+  <text x="120" y="260" font-family="Inter, sans-serif" font-size="96" font-weight="800" fill="#fff">
+    Making the Metaverse
+  </text>
+
+  <!-- Accent arrow icon -->
+  <g transform="translate(1150,100)" fill="#fff">
+    <polygon points="0,0 200,0 200,60 60,60 60,200 0,200" />
+    <polygon points="200,0 260,0 260,260 200,260" />
+  </g>
+</svg>
