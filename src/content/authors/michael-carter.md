@@ -4,7 +4,7 @@ role: Founder
 bio: |
   Michael is the founder of Making the Metaverse. He is a scholar, content creator, and entrepreneur. 
 image:
-  url: "/images/authors/michael_headshot.jpeg"
+  url: "../../images/authors/michael_headshot.jpeg"
   alt: "#_"
 socials:
   twitter: "#_"
