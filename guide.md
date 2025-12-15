@@ -6,3 +6,11 @@ isTopStory: true to see post with large image at top of 'blog' home page aka ind
 isBreaking: true
 isBrief: 
 isLocked: true (paywall)
+
+
+
+Landing Page: 
+
+To change the categories shown on Index1 go here:
+
+/Users/michaelcarter/Dropbox/AI Builds/making-the-metaverse-hub/src/components/blog/landingPages/index1/Categories1.astro 
