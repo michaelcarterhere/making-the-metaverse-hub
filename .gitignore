@@ -1,0 +1,23 @@
+# drafts
+drafts/
+
+
+# dependencies
+node_modules
+
+# build outputs
+dist
+.astro
+
+# environment and config
+
+
+# logs and diagnostics
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# editor
+.vscode
