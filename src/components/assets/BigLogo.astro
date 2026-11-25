@@ -49,7 +49,8 @@ const { class: className = "", ...rest } = Astro.props;
   // Only show the big logo on primary landing pages
   if (
     path !== "/" &&
-    path !== "/index-2" &&
+    path !== "/blog" &&
+    path !== "/blog/" &&
     path !== "/podcast/home"
   ) {
     document.getElementById("bigLogo")?.style.setProperty("display", "none");

@@ -6,7 +6,6 @@ import Wrapper from "@/components/fundations/containers/Wrapper.astro";
 import AsideEpisode from "@/components/podcast/AsideEpisode.astro";
 // Components
 import EpisodeCard from "@/components/podcast/EpisodeCard.astro";
-import AdvertAside from "@/components/advert/AdvertAside.astro";
 // Content
 import { getCollection } from "astro:content";
 export async function getStaticPaths() {
@@ -43,7 +42,6 @@ const { posts } = Astro.props;
 
         <div class="lg:sticky lg:top-10 lg:z-20">
           <AsideEpisode />
-          <AdvertAside />
         </div>
       </div>
     </Wrapper>

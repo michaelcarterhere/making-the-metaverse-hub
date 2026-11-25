@@ -3,11 +3,9 @@ import { Image } from "astro:assets";
 // Fundations
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Text from "@/components/fundations/elements/Text.astro";
-import Link from "@/components/fundations/elements/Link.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
 import ShareButtons from "@/components/fundations/elements/ShareButtons.astro";
 // Sections
-import AdvertAside from "@/components/advert/AdvertAside.astro";
 import AsidePost from "@/components/blog/AsidePost.astro";
 // Entries
 import EntryFeaturedSmall from "@/components/blog/EntryFeaturedSmall.astro";
@@ -86,7 +84,6 @@ const relatedPosts = allPosts.filter((post) =>
             </div>
           </div>
           <AsidePost />
-          <AdvertAside />
         </div>
         <div
           class="lg:col-span-3 bg-base-100 p-8 lg:p-40 lg:py-12 rounded-[3rem]"
@@ -110,37 +107,10 @@ const relatedPosts = allPosts.filter((post) =>
 
             <div class="flex flex-col mt-2 lg:flex-row lg:gap-24 gap-12">
               <div class="lg:col-span-3">
-                {
-                  frontmatter.isLocked ? (
-                    <div class="p-8 bg-base-600 rounded-3xl lg:p-12 ">
-                      <Text
-                        tag="h4"
-                        variant="textXL"
-                        class="font-light text-white text-balance"
-                      >
-                        This post is for subscribers only. Unlock premium
-                        insights by becoming a member.
-                      </Text>
-                      <div class="flex flex-wrap justify-end mt-24  gap-2 lg:mt-48">
-                        <Link size="xl" variant="default" href="/forms/sign-in">
-                          Log in
-                        </Link>
-                        <Link
-                          size="xl"
-                          variant="muted"
-                          href="/pricing/membership"
-                        >
-                          Subscribe Now
-                        </Link>
-                      </div>
-                    </div>
-                  ) : (
-                    <Wrapper variant="prose" class="mt-2 ">
+                <Wrapper variant="prose" class="mt-2 ">
                       <h3>{frontmatter.description}</h3>
                       <slot />
                     </Wrapper>
-                  )
-                }
               </div>
             </div>
             <div class="flex items-center mt-12 gap-2">
