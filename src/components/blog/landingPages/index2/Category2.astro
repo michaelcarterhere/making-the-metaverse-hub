@@ -14,12 +14,19 @@ allPosts.sort((a, b) => {
   return dateB - dateA; // Compare timestamps
 });
 
-// Define categories dynamically
-const categories = [
-  { name: "Business", tag: "business" },
-  { name: "Finance", tag: "finance" },
-  { name: "Tech", tag: "tech" },
-];
+const tagCounts = new Map();
+for (const post of allPosts) {
+  for (const tag of post.data.tags) {
+    tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1);
+  }
+}
+const categories = [...tagCounts.entries()]
+  .sort((a, b) => b[1] - a[1])
+  .slice(0, 6)
+  .map(([tag]) => ({
+    name: tag.replace(/-/g, " "),
+    tag,
+  }));
 ---
 
 <div class="flex flex-col gap-2">

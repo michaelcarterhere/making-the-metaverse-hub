@@ -34,31 +34,11 @@ settings:
     merge: true
 
 content:
-  # ---------------------
-  # INFO PAGES
-  # ---------------------
-  - name: infopages
-    label: Info Pages
-    type: collection
-    path: src/content/infopages
-    filename: "{year}{month}{day}-{hour}{minute}{second}.md"
-    view:
-      primary: page
-      fields: [page, pubDate]
-      sort: [page]
-    fields:
-      - { name: page,    label: Page,     type: string, required: true }
-      - { name: pubDate, label: Pub Date, type: date }
-      - { name: body,    label: Body,     type: rich-text }
-
-  # ---------------------
-  # AUTHORS
-  # ---------------------
   - name: authors
     label: Authors
     type: collection
     path: src/content/authors
-    filename: "{year}{month}{day}-{hour}{minute}{second}.md"
+    filename: "{slug}.md"
     view:
       primary: name
       fields: [name, role]
@@ -80,15 +60,10 @@ content:
         label: Socials
         type: object
         fields:
-          - { name: twitter,  label: Twitter,  type: string }
-          - { name: website,  label: Website,  type: string }
           - { name: linkedin, label: LinkedIn, type: string }
           - { name: email,    label: Email,    type: string }
       - { name: body, label: Body, type: rich-text }
 
-  # ---------------------
-  # POSTS
-  # ---------------------
   - name: posts
     label: Posts
     type: collection
@@ -120,17 +95,13 @@ content:
       - { name: isTopStory,  label: Top Story,   type: boolean }
       - { name: isFeatured,  label: Featured,    type: boolean }
       - { name: isBrief,     label: Brief,       type: boolean }
-      - { name: isLocked,    label: Locked,      type: boolean }
       - { name: body,        label: Body,        type: rich-text }
 
-  # ---------------------
-  # PODCASTS
-  # ---------------------
   - name: podcast
     label: Podcasts
     type: collection
     path: src/content/podcast
-    filename: "{year}{month}{day}-{hour}{minute}{second}.md"
+    filename: "{slug}.md"
     view:
       primary: title
       fields: [title, pubDate, author]
@@ -159,69 +130,4 @@ content:
       - { name: isFeatured,     label: Featured,       type: boolean }
       - { name: isGuest,        label: Guest Episode,  type: boolean }
       - { name: isSeries,       label: Part of Series, type: boolean }
-      - { name: isLocked,       label: Locked,         type: boolean }
       - { name: body,           label: Body,           type: rich-text }
-
-  # ---------------------
-  # JOBS
-  # ---------------------
-  - name: jobs
-    label: Jobs
-    type: collection
-    path: src/content/jobs
-    filename: "{year}{month}{day}-{hour}{minute}{second}.md"
-    view:
-      primary: title
-      fields: [title, company, location]
-      sort: [pubDate]
-      default:
-        sort: pubDate
-        order: desc
-    fields:
-      - { name: title,                label: Title,                type: string, required: true }
-      - { name: pubDate,              label: Publication Date,     type: date }
-      - { name: jobType,              label: Job Type,             type: string }
-      - { name: company,              label: Company,              type: string }
-      - { name: location,             label: Location,             type: string }
-      - { name: category,             label: Category,             type: string }
-      - { name: jobLevel,             label: Job Level,            type: string }
-      - { name: experience,           label: Experience,           type: string }
-      - { name: salaryRange,          label: Salary Range,         type: string }
-      - { name: description,          label: Description,          type: text }
-      - { name: benefits,             label: Benefits,             type: string, list: true }
-      - { name: employmentStatus,     label: Employment Status,    type: string }
-      - { name: requirements,         label: Requirements,         type: string, list: true }
-      - { name: salaryType,           label: Salary Type,          type: string }
-      - { name: referenceId,          label: Reference ID,         type: string }
-      - { name: contactEmail,         label: Contact Email,        type: string }
-      - { name: responsibilities,     label: Responsibilities,     type: string, list: true }
-      - { name: hiringManager,        label: Hiring Manager,       type: string }
-      - { name: companyCulture,       label: Company Culture,      type: string }
-      - { name: perks,                label: Perks,                type: string, list: true }
-      - { name: skills,               label: Skills,               type: string, list: true }
-      - { name: workEnvironment,      label: Work Environment,     type: string }
-      - { name: applicationDeadline,  label: Application Deadline, type: date }
-      - { name: mediaLinks,           label: Media Links,          type: string, list: true }
-      - { name: applicationInstructions, label: Application Instructions, type: text }
-      - { name: body,                 label: Body,                 type: rich-text }
-
-  # ---------------------
-  # HELP CENTER
-  # ---------------------
-  - name: helpCenter
-    label: Help Center
-    type: collection
-    path: src/content/helpCenter
-    filename: "{year}{month}{day}-{hour}{minute}{second}.md"
-    view:
-      primary: title
-      fields: [title, pubDate]
-      sort: [pubDate]
-      default:
-        sort: pubDate
-        order: desc
-    fields:
-      - { name: title,       label: Title,       type: string, required: true }
-      - { name: pubDate,     label: Publication Date, type: date }
-      - { name: description, label: Description, type: text }
-      - { name: body,        label: Body,        type: rich-text }

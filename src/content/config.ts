@@ -1,10 +1,5 @@
 import { defineCollection, z } from "astro:content";
-const infopages = defineCollection({
-  schema: z.object({
-    page: z.string(),
-    pubDate: z.date(),
-  }),
-});
+
 const authors = defineCollection({
   schema: ({ image }) =>
     z.object({
@@ -12,7 +7,7 @@ const authors = defineCollection({
       role: z.string().optional(),
       bio: z.string().optional(),
       image: z.object({
-        url: image(), // ← Astro's image helper for optimization
+        url: image(),
         alt: z.string(),
       }),
       socials: z
@@ -34,7 +29,7 @@ const posts = defineCollection({
       description: z.string(),
       author: z.string(),
       image: z.object({
-        url: image(), // ← use the helper here
+        url: image(),
         alt: z.string(),
       }),
       tags: z.array(z.string()),
@@ -54,7 +49,7 @@ const podcasts = defineCollection({
       description: z.string(),
       author: z.string(),
       image: z.object({
-        url: image(), // ← Use Astro's image helper
+        url: image(),
         alt: z.string(),
       }),
       episodeNumber: z.number().optional(),
@@ -68,47 +63,8 @@ const podcasts = defineCollection({
     }),
 });
 
-const jobs = defineCollection({
-  schema: z.object({
-    title: z.string(),
-    pubDate: z.date(),
-    jobType: z.string(),
-    company: z.string(),
-    location: z.string(),
-    category: z.string(),
-    jobLevel: z.string(),
-    experience: z.string(),
-    salaryRange: z.string(),
-    description: z.string(),
-    benefits: z.array(z.string()),
-    employmentStatus: z.string(),
-    requirements: z.array(z.string()),
-    salaryType: z.string().optional(),
-    referenceId: z.string().optional(),
-    contactEmail: z.string().optional(),
-    responsibilities: z.array(z.string()),
-    hiringManager: z.string().optional(),
-    companyCulture: z.string().optional(),
-    perks: z.array(z.string()).optional(),
-    skills: z.array(z.string()).optional(),
-    workEnvironment: z.string().optional(),
-    applicationDeadline: z.date().optional(),
-    mediaLinks: z.array(z.string()).optional(),
-    applicationInstructions: z.string().optional(),
-  }),
-});
-const helpCenter = defineCollection({
-  schema: z.object({
-    title: z.string(),
-    pubDate: z.date(),
-    description: z.string(),
-  }),
-});
 export const collections = {
   authors: authors,
-  infopages: infopages,
   posts: posts,
   podcast: podcasts,
-  jobs: jobs,
-  helpCenter: helpCenter,
 };

@@ -69,19 +69,12 @@ const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
             class="hidden w-full duration-300 ease-in-out"
           >
             <div class="flex flex-wrap gap-1">
-              <Link
-                href="https://buy.polar.sh/polar_cl_Ud7LKuiTum4KOh18ACTaikj9T-YIeLBfyVqFQZ66Rt0"
-                size="sm"
-                variant="pink"
-              >
-                Buy Snowpeak
-              </Link>
-              <Link href="/system/overview" size="sm" variant="muted">
-                Overview
-              </Link>
-              <Link href="/index-2" size="sm" variant="muted"> Blog </Link>
+              <Link href="/blog" size="sm" variant="muted"> Blog </Link>
               <Link href="/podcast/home" size="sm" variant="muted">
                 Podcast
+              </Link>
+              <Link href="/about" size="sm" variant="muted">
+                About
               </Link>
               {
                 tags.map((tag) => {
@@ -98,9 +91,6 @@ const tags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
                   );
                 })
               }
-              <Link href="/forms/sign-in" size="sm" variant="accent">
-                Sign in
-              </Link>
             </div>
           </div>
         </div>
