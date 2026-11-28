@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://makingthemetaverse.com/sitemap-index.xml

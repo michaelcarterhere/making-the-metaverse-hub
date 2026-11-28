@@ -7,6 +7,9 @@ import Favicons from "@/components/fundations/head/Favicons.astro";
 import KeenSlider from "@/components/fundations/scripts/KeenSlider.astro";
 import TickerHideScript from "@/components/fundations/scripts/TickerHideScript.astro";
 import NavigationScript from "@/components/fundations/scripts/NavigationScript.astro";
+
+// Cloudflare Web Analytics. Omitted when PUBLIC_CF_BEACON_TOKEN is unset.
+const cfBeaconToken = import.meta.env.PUBLIC_CF_BEACON_TOKEN ?? "";
 ---
 
 <Seo />
@@ -19,3 +22,11 @@ import NavigationScript from "@/components/fundations/scripts/NavigationScript.a
 <TickerHideScript />
 <NavigationScript />
 
+{cfBeaconToken && (
+  <script
+    is:inline
+    defer
+    src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon={JSON.stringify({ token: cfBeaconToken })}
+  ></script>
+)}
