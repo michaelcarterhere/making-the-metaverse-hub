@@ -1,0 +1,7 @@
+# The Astro sitemap integration writes sitemap-index.xml.
+# Probe-path blocking lives in netlify/edge-functions/block-probes.ts.
+[[redirects]]
+  from = "/sitemap.xml"
+  to = "/sitemap-index.xml"
+  status = 301
+  force = true
